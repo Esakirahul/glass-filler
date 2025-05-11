@@ -1,4 +1,4 @@
-/*Glass Filler*/
+<!-- Glass Filler -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,12 +20,24 @@
     <button onclick="fill('lightblue')">Water</button>
     <button onclick="fill('yellow')">Lemon Juice</button>
     <button onclick="fill('orange')">Mango Juice</button>
-    <button onclick="fill('white')">Finish</button>
+    <button onclick="finish()">Finish</button>
   </div>
 
   <script>
+    let isGlassFull = false;
+
     function fill(color) {
+      if (isGlassFull) {
+        alert("Please finish the current drink before choosing another.");
+        return;
+      }
       document.getElementById('glass').style.background = color;
+      isGlassFull = true;
+    }
+
+    function finish() {
+      document.getElementById('glass').style.background = 'white';
+      isGlassFull = false;
     }
   </script>
 </body>
