@@ -1,0 +1,32 @@
+/*Glass Filler*/
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body { text-align: center; font-family: sans-serif; }
+    .glass {
+      width: 100px; height: 150px; border: 3px solid #000;
+      margin: 20px auto; border-radius: 10px; background: white;
+    }
+    .jugs button {
+      margin: 5px; padding: 10px 20px; cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h2>Click a jug to fill the glass</h2>
+  <div class="glass" id="glass"></div>
+  <div class="jugs">
+    <button onclick="fill('lightblue')">Water</button>
+    <button onclick="fill('yellow')">Lemon Juice</button>
+    <button onclick="fill('orange')">Mango Juice</button>
+    <button onclick="fill('white')">Finish</button>
+  </div>
+
+  <script>
+    function fill(color) {
+      document.getElementById('glass').style.background = color;
+    }
+  </script>
+</body>
+</html>
